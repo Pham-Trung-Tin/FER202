@@ -1,0 +1,92 @@
+.orchids-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+.orchids-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+h2 {
+  text-align: center;
+  color: #4a148c;
+  margin-bottom: 24px;
+}
+
+/* Modern, beautiful card styles for orchid gallery */
+.orchid-card {
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(80, 80, 180, 0.10), 0 1.5px 6px 0 rgba(80, 80, 180, 0.08);
+  border: 2px solid #e3e6fd;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s;
+  background: #fff;
+  margin-bottom: 24px;
+  min-width: 260px;
+  max-width: 320px;
+}
+.orchid-card:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(80, 80, 180, 0.18), 0 3px 12px 0 rgba(80, 80, 180, 0.12);
+  border: 2px solid #1976d2;
+}
+.orchid-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--orchid-title-color, #222);
+  margin-bottom: 0.5rem;
+}
+.orchid-detail-btn {
+  border-radius: 8px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #1976d2 60%, #64b5f6 100%);
+  color: #fff;
+  border: none;
+  transition: background 0.2s;
+}
+.orchid-detail-btn:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
+}
+.orchid-badge {
+  background: #e53935;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 2px 10px;
+  margin-left: 8px;
+}
+
+/* Dark mode support */
+body.dark, .dark {
+  --orchid-title-color: #fff;
+}
+body.dark .orchid-card, .dark .orchid-card {
+  background: #23242a;
+  border-color: #33374d;
+}
+body.dark .orchid-title, .dark .orchid-title {
+  color: var(--orchid-title-color, #fff);
+}
+body.dark .orchid-detail-btn, .dark .orchid-detail-btn {
+  background: linear-gradient(90deg, #1976d2 60%, #64b5f6 100%);
+  color: #fff;
+}
+body.dark .orchid-detail-btn:hover, .dark .orchid-detail-btn:hover {
+  background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
+}
+body.dark .orchid-badge, .dark .orchid-badge {
+  background: #e53935;
+  color: #fff;
+}
+body.dark .card-text, .dark .card-text, body.dark .orchid-card div, .dark .orchid-card div {
+  color: #e0e0e0 !important;
+}
+
+@media (max-width: 600px) {
+  .orchid-card {
+    min-width: 90vw;
+    max-width: 98vw;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "FER202-Lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
+    "@mui/material": "^7.2.0",
+    "bootstrap": "^5.3.7",
+    "formik": "^2.4.6",
+    "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.3",
+    "yup": "^1.6.1"
+  },
+  "devDependencies": {
+    "vite": "^7.0.4"
+  }
+}
