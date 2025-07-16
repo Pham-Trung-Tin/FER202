@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useTheme from './useTheme';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const tabContent = [
@@ -25,6 +26,9 @@ const faq = [
 export default function About() {
   const [tab, setTab] = useState(0);
   const [open, setOpen] = useState(null);
+  const [theme] = useTheme();
+  const isDark = theme === 'dark';
+  
   return (
     <div className="container my-5">
       <ul className="nav nav-tabs justify-content-center mb-4">
@@ -34,20 +38,20 @@ export default function About() {
           </li>
         ))}
       </ul>
-      <div className="bg-white rounded shadow-sm p-4 mb-4 text-center" style={{minHeight: 120}}>
+      <div className={`${isDark ? 'bg-dark text-light' : 'bg-white'} rounded shadow-sm p-4 mb-4 text-center`} style={{minHeight: 120}}>
         {tabContent[tab].content}
       </div>
-      <h5 className="text-primary mb-3">FAQ</h5>
+      <h5 className={`${isDark ? 'text-info' : 'text-primary'} mb-3`}>FAQ</h5>
       <div className="accordion" id="faqAccordion">
         {faq.map((item, idx) => (
-          <div className="accordion-item" key={idx}>
+          <div className={`accordion-item ${isDark ? 'bg-dark' : ''}`} key={idx}>
             <h2 className="accordion-header" id={`heading${idx}`}>
-              <button className={`accordion-button${open === idx ? '' : ' collapsed'}`} type="button" onClick={() => setOpen(open === idx ? null : idx)}>
+              <button className={`accordion-button${open === idx ? '' : ' collapsed'} ${isDark ? 'bg-dark text-light' : ''}`} type="button" onClick={() => setOpen(open === idx ? null : idx)}>
                 {item.q}
               </button>
             </h2>
             <div className={`accordion-collapse collapse${open === idx ? ' show' : ''}`}>
-              <div className="accordion-body">{item.a}</div>
+              <div className={`accordion-body ${isDark ? 'bg-dark text-light' : ''}`}>{item.a}</div>
             </div>
           </div>
         ))}

@@ -2,4 +2,16 @@ body {
   margin: 0;
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
   background: #f3f0fa;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme styles */
+body.dark {
+  background: #121212;
+  color: #ffffff;
+}
+
+body.light {
+  background: #f3f0fa;
+  color: #000000;
 }

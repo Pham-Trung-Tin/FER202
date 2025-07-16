@@ -7,6 +7,14 @@ export default function useTheme() {
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
+    // Also add/remove class for compatibility with existing CSS
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+      document.body.classList.remove('light');
+    } else {
+      document.body.classList.add('light');
+      document.body.classList.remove('dark');
+    }
     localStorage.setItem('theme', theme);
   }, [theme]);
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import useTheme from './useTheme';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -20,9 +21,12 @@ const programOptions = [
 
 const Contact = () => {
   const [submitted, setSubmitted] = React.useState(false);
+  const [theme] = useTheme();
+  const isDark = theme === 'dark';
+  
   return (
     <div className="container my-5">
-      <div className="card shadow-sm p-4 mx-auto" style={{maxWidth: 500}}>
+      <div className={`card shadow-sm p-4 mx-auto ${isDark ? 'bg-dark text-light' : ''}`} style={{maxWidth: 500}}>
         <h3 className="text-center mb-3">Contact Us</h3>
         <Formik
           initialValues={{ name: '', email: '', phone: '', program: '0', message: '', agree: false }}
